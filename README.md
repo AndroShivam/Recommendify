@@ -11,6 +11,7 @@ got you covered, it will help you to find related artists according to your favo
 
 ## Tech stack & Open-source libraries
 - [Django](https://www.djangoproject.com/) - The web framework for perfectionists with deadlines.
+- [Bootstrap 4](https://github.com/twbs/bootstrap) - The most popular HTML, CSS, and JavaScript framework for developing responsive, mobile first projects on the web.
 - [Spotipy](https://github.com/plamere/spotipy) - A light weight Python library for the Spotify Web AP
 - [Spotify for Developers](https://developer.spotify.com/) - Build experiences for millions of music lovers with playback, personalization, and much, much more.
 
