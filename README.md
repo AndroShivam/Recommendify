@@ -9,6 +9,9 @@ got you covered, it will help you to find related artists according to your favo
 <img src="https://github.com/AndroShivam/Recommendify/blob/main/screenshots/recommendify.gif"/>
 </p>
 
+## Check it out
+- [Recommentify](https://recommentify.herokuapp.com) 
+
 ## Tech stack & Open-source libraries
 - [Django](https://www.djangoproject.com/) - The web framework for perfectionists with deadlines.
 - [Bootstrap 4](https://github.com/twbs/bootstrap) - The most popular HTML, CSS, and JavaScript framework for developing responsive, mobile first projects on the web.
