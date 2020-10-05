@@ -1,4 +1,5 @@
 {% load static %}
+{% load crispy_forms_tags %}
 <!doctype html>
 <html lang="en">
   <head>
@@ -19,16 +20,16 @@
   </head>
   <body> 
 
-
+<!-- 
     <section class="main-sec">
       <div class="container">
         <div class="row">
           <div class="col-md-12 col-sm-6">
             <img class = "img-fluid main-img" src="{% static 'home/music5.jpg' %}" alt="main-img">
-            <form class = "form-inline centered" action="{% url 'main_home' %}" method="POST">
+            <form class = "form-inline centered" name = "myform" action="{% url 'main_home' %}" method="POST">
               {% csrf_token %}
               <div class="input-group search-div">
-                <input type="text" class="form-control search-box" type="submit" name="search" placeholder="Artist name">
+                <input type="text" autocomplete = "off" class="form-control search-box" type="submit" name="search" placeholder="Artist name">
                 <div class="input-group-append">
                   <button class="btn btn-outline-secondary"><i class="fa fa-search"></i></button>
                 </div>
@@ -37,9 +38,27 @@
           </div>
         </div>
       </div>
+    </section> -->
+
+
+    
+    <section class="main-sec">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 col-sm-6">
+            <img class = "img-fluid main-img" src="{% static 'home/music5.jpg' %}" alt="main-img">
+            <form class = "form-inline centered" name = "myform" action="{% url 'main_home' %}" method="POST" aria-placeholder="Artist name..">
+              {% csrf_token %}
+              {{ form|crispy }}
+              <button class="btn btn-outline-secondary"><i class="fa fa-search"></i></button>
+            </form>
+          </div>
+        </div>
+      </div>
     </section>
-      
-  
+
+
+
     <section class="section-res">
       <div class="container d-flex justify-content-cente">
          <div class="row">
@@ -64,40 +83,27 @@
               {% endif %}
          </div>
        </div>
-    </section> 
-   
-     
-       <!-- <section class="section-res">
-       <div class="container">
-          <div class="row">
-             <div class="col-md-6 artist-image">
-                {% for res in result.artists %}
-                  {% for image in res.images %}
-                    {% if image.height == 320 %}          
-                      <div class="card" style="width: 18rem;">
-                          <img class="card-img-top" src="{{ image.url}}" alt="Card image cap">
-                          <div class="card-body">
-                            <h5 class="card-title font-weight-bold">{{ res.name }}</h5>
-                            <p class="card-text font-weight-light">{{ res.genres }}</p>
-                            <p class="card-text font-weight-normal">listen  on  <a href="{{ res.external_urls.spotify }}"><img height="25px" width="25px" src="{% static 'home/spotify.svg' %}" alt="spotify-icon"></a></p>
-                          </div>
-                      </div>  
-                    {% endif %}
-                  {% endfor %}
-                {% endfor %}
-            </div>
+    </section>  
+
+
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 d-flex justify-content-center">
+           {% if result is not None %}
+              <p class="font-weight-bold footer-text">Share your playlist with <a href="https://www.instagram.com/shivam._.sharma._/"> me </a> ❤️ </p>
+           {% endif %}
           </div>
         </div>
-     </section> 
-     -->
-    
+      </div>
+    </footer>
+
+  </body>
+    <!-- Optional JavaScript -->
 
     <script src="{% static "home/script.js" %}"></script>
-    <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-
-  </body>
 </html>
