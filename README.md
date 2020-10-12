@@ -1,10 +1,5 @@
 <h1 align="center">Recommendify</h1>
 
-<p align="center">  
-if you're like me who loves music but like particular type of artists/tracks (we're picky :p).
-it's difficult to find good music from millions of artists/tracks available on spotify but don't worry Recommendify 
-got you covered, it will help you to find related artists according to your favourite artist. <br>
-
 <p align="center">
 <img src="https://github.com/AndroShivam/Recommendify/blob/main/screenshots/recommendify.gif"/>
 </p>
